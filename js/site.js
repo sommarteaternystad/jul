@@ -16,8 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
   var days = document.querySelectorAll('.cal-day--active');
+  var overlay = document.getElementById('cal-modal-overlay');
   var panel = document.getElementById('cal-panel');
-  if (!days.length || !panel) return;
+  var closeBtn = document.getElementById('cal-modal-close');
+  if (!days.length || !overlay || !panel) return;
 
   var weekdayEl = document.getElementById('cal-panel-weekday');
   var dateEl = document.getElementById('cal-panel-date');
@@ -26,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var textEl = document.getElementById('cal-panel-text');
   var badgeEl = document.getElementById('cal-panel-badge');
 
-  function select(day) {
+  function openModal(day) {
     days.forEach(function (d) { d.classList.remove('is-selected'); });
     day.classList.add('is-selected');
 
@@ -53,12 +55,27 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       badgeEl.hidden = true;
     }
+
+    overlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    overlay.hidden = true;
+    document.body.style.overflow = '';
   }
 
   days.forEach(function (day) {
-    day.addEventListener('click', function () { select(day); });
+    day.addEventListener('click', function () { openModal(day); });
   });
 
-  var initial = document.querySelector('.cal-day--active[data-date="2026-11-21"]') || days[0];
-  select(initial);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeModal();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !overlay.hidden) closeModal();
+  });
 });

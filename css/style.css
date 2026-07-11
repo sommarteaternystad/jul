@@ -847,6 +847,8 @@ h2 {
   margin-bottom: 16px;
 }
 
+.cal-panel-heading[hidden] { display: none; }
+
 .cal-panel-hours {
   display: flex;
   align-items: center;
