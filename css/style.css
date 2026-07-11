@@ -227,6 +227,32 @@ img { display: block; max-width: 100%; }
   border-radius: 999px;
 }
 
+.hero-banner-hours {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.hero-banner-hours-label {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted-2);
+}
+
+.hero-banner-hours-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.hero-banner-hours-row span:first-child { color: var(--muted); }
+.hero-banner-hours-row span:last-child { font-weight: 800; color: var(--text); }
+
 /* ══════════════════════════════════════════════
    SECTION SHARED
 ══════════════════════════════════════════════ */
@@ -365,6 +391,90 @@ h2 {
   color: var(--muted-2);
   max-width: 260px;
 }
+
+/* ══════════════════════════════════════════════
+   BILDPLATSHÅLLARE
+══════════════════════════════════════════════ */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.photo-grid--compact {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 760px;
+  margin: 36px auto 0;
+}
+
+.photo-placeholder {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-md);
+  border: 2px dashed rgba(20,20,20,0.16);
+  background: var(--bg-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--muted-2);
+}
+
+.photo-placeholder svg { color: var(--crimson); opacity: 0.55; }
+
+.photo-placeholder span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .photo-grid--compact { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ══════════════════════════════════════════════
+   UTSTÄLLARE (julmarknad)
+══════════════════════════════════════════════ */
+
+.exhibitor-card {
+  margin-top: 40px;
+  background: linear-gradient(160deg, var(--green) 0%, var(--green-deep) 100%);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 32px 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-dark);
+}
+
+.exhibitor-card-kicker {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--gold-light);
+}
+
+.exhibitor-card h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: #fff;
+}
+
+.exhibitor-card p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.82);
+  max-width: 520px;
+}
+
+.exhibitor-card .btn { flex-shrink: 0; }
 
 /* ══════════════════════════════════════════════
    LÄNK-GRID (knappar till undersidor)
@@ -559,14 +669,9 @@ h2 {
 .cal-legend-dot--special { background: var(--crimson); }
 .cal-legend-dot--last { background: var(--green); border: 2px solid var(--crimson); }
 
-.cal-layout {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 28px;
-  align-items: start;
-}
-
 .cal-months {
+  max-width: 860px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -660,15 +765,55 @@ h2 {
 .cal-day--active.is-selected .cal-day-dot--weekend,
 .cal-day--active.is-selected .cal-day-dot--special { background: #fff; }
 
+.cal-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(6,14,9,0.60);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cal-modal-overlay[hidden] { display: none; }
+
 .cal-panel {
-  position: sticky;
-  top: 88px;
+  position: relative;
+  width: 100%;
+  max-width: 420px;
   background: linear-gradient(160deg, var(--green) 0%, var(--green-deep) 100%);
   color: #fff;
   border-radius: var(--radius-lg);
-  padding: 30px 30px 28px;
-  box-shadow: var(--shadow-dark);
+  padding: 34px 30px 28px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  animation: cal-modal-in 0.18s ease-out;
 }
+
+@keyframes cal-modal-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.cal-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.14);
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.16s;
+}
+
+.cal-modal-close:hover { background: rgba(255,255,255,0.26); }
 
 .cal-panel--last { background: linear-gradient(160deg, var(--crimson) 0%, var(--crimson-deep) 100%); }
 
@@ -733,10 +878,8 @@ h2 {
 
 .cal-panel-badge[hidden] { display: none; }
 
-@media (max-width: 900px) {
-  .cal-layout { grid-template-columns: 1fr; }
+@media (max-width: 620px) {
   .cal-months { grid-template-columns: 1fr; }
-  .cal-panel { position: static; }
 }
 
 @media (max-width: 480px) {
