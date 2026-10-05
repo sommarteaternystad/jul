@@ -28,15 +28,15 @@ var JUL_SCHEDULE = {
   events: {
     '2026-12-05': [
       { time: '11.00–17.00', title: 'Julmarknad med utställare', free: true, href: 'julmarknad.html' },
-      { time: '16.00', title: 'Julkonsert NIMT', ticket: true, href: 'konserter.html' }
+      { time: '16.00', title: 'Julkonsert NIMT', ticket: true, url: 'https://tickets.nortic.se/ticket/show/363142', href: 'konserter.html' }
     ],
     '2026-12-06': [
-      { time: '11.00–15.00', title: 'Adventsmys & barnteater', detail: 'Träffa tomten · Måla julbilder · Barnteater 13.00 · Julklappsdamm', ticket: true, href: 'konserter.html' }
+      { time: '11.00–15.00', title: 'Adventsmys & barnteater', detail: 'Träffa tomten · Måla julbilder · Barnteater 13.00 · Julklappsdamm', ticket: true, url: 'https://tickets.nortic.se/ticket/show/363146', href: 'konserter.html' }
     ],
     '2026-12-12': [
       { time: '11.00–17.00', title: 'Julmarknad med utställare', free: true, href: 'julmarknad.html' },
-      { time: '12.00', title: 'Barnjulkonsert', ticket: true, href: 'konserter.html' },
-      { time: '15.00', title: 'Julteater: Har du också julspel', detail: 'Kultur för alla Syd', ticket: true, href: 'konserter.html' }
+      { time: '12.00', title: 'Barnjulkonsert', ticket: true, url: 'https://tickets.nortic.se/ticket/show/363150', href: 'konserter.html' },
+      { time: '15.00', title: 'Julteater: Har du också julspel', detail: 'Kultur för alla Syd', ticket: true, url: 'https://tickets.nortic.se/ticket/show/363151', href: 'konserter.html' }
     ]
   }
 };

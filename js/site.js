@@ -153,7 +153,7 @@ function setupCalendar() {
       if (ev.ticket) {
         var buy = document.createElement('a');
         buy.className = 'btn btn-gold cal-event-btn';
-        buy.href = JUL_TICKET_URL;
+        buy.href = ev.url || JUL_TICKET_URL;
         buy.target = '_blank';
         buy.rel = 'noopener';
         buy.textContent = 'Köp biljett';
