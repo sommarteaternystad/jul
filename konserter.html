@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Konserter — Jul hos Sommarteatern</title>
-  <meta name="description" content="Julkonserter hos Sommarteatern i Öja, julen 2026.">
+  <title>Konserter &amp; teater — Jul hos Sommarteatern</title>
+  <meta name="description" content="Julkonserter, barnteater och julspel hos Sommarteatern i Öja, julen 2026. Köp biljetter online.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&display=swap" rel="stylesheet">
@@ -17,11 +17,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="header-brand" href="index.html">
-        <img src="images/jul-logga.png" alt="Jul hos Sommarteatern" class="header-logo">
-        <span class="header-brand-text">
-          <span class="header-brand-title">Jul hos Sommarteatern</span>
-          <span class="header-brand-sub">Sommarteatern Ystad</span>
-        </span>
+        <img src="images/logga-header.png" alt="Jul hos Sommarteatern" class="header-logo">
       </a>
 
       <button class="nav-toggle" aria-label="Öppna meny" aria-expanded="false">
@@ -29,10 +25,11 @@
       </button>
 
       <nav class="main-nav" aria-label="Huvudmeny">
+        <span class="header-status" id="header-status" hidden></span>
         <a href="index.html">Hem</a>
         <a href="kalender.html">Kalender</a>
         <a href="julgranar.html">Julgranar</a>
-        <a href="konserter.html" class="is-active">Konserter</a>
+        <a href="konserter.html" class="is-active">Konserter &amp; teater</a>
         <a href="julmarknad.html">Julmarknad</a>
       </nav>
     </div>
@@ -41,24 +38,58 @@
   <section class="page-hero">
     <div class="container">
       <p class="section-kicker">Julen 2026</p>
-      <h1 class="page-title">Konserter</h1>
-      <p class="page-lead">Julkonserter — kvällar fyllda av värme, musik och gemenskap.</p>
+      <h1 class="page-title">Konserter &amp; teater</h1>
+      <p class="page-lead">Julkonserter, barnteater och julspel i Öja — här hittar du alla program och biljetter.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="coming-soon">
-        <span class="coming-soon-badge">Info kommer snart</span>
-        <h2>Datum och artister presenteras inom kort</h2>
-        <p>Vi håller just nu på att spika programmet för årets julkonserter. Kom snart tillbaka för datum, medverkande och biljettinformation.</p>
-        <div class="btn-row" style="margin-top:24px">
-          <a href="index.html" class="btn btn-outline">Till startsidan</a>
-        </div>
+      <p class="program-intro">Julkonserter, barnteater och julspel – kvällar och helgdagar fyllda av värme, musik och gemenskap. Biljetter köper du via knappen på respektive program.</p>
+      <div class="program-grid">
+        <article class="program-card">
+          <img src="images/program/julkonsert-nimt.webp" alt="Julkonsert NIMT" class="program-card-img" loading="lazy">
+          <div class="program-card-body">
+            <span class="program-card-date">Lördag 5 dec · 16.00</span>
+            <h3 class="program-card-title">Julkonsert NIMT</h3>
+            <p class="program-card-desc">En kväll fylld av julmusik, värme och gemenskap i Öja.</p>
+            <div class="program-card-foot"><a href="https://tickets.nortic.se/ticket/organizer/1010" target="_blank" rel="noopener" class="btn btn-gold">Köp biljett</a></div>
+          </div>
+        </article>
+        <article class="program-card">
+          <img src="images/program/adventsmys-barnteater.webp" alt="Adventsmys och barnteater" class="program-card-img" loading="lazy">
+          <div class="program-card-body">
+            <span class="program-card-date">Söndag 6 dec · 11.00–15.00</span>
+            <h3 class="program-card-title">Adventsmys &amp; barnteater</h3>
+            <p class="program-card-desc">Träffa tomten · Måla julbilder · Barnteater 13.00 · Julklappsdamm</p>
+            <div class="program-card-foot"><a href="https://tickets.nortic.se/ticket/organizer/1010" target="_blank" rel="noopener" class="btn btn-gold">Köp biljett</a></div>
+          </div>
+        </article>
+        <article class="program-card">
+          <img src="images/program/barnjulkonsert.webp" alt="Barnjulkonsert" class="program-card-img" loading="lazy">
+          <div class="program-card-body">
+            <span class="program-card-date">Lördag 12 dec · 12.00</span>
+            <h3 class="program-card-title">Barnjulkonsert</h3>
+            <p class="program-card-desc">En julkonsert för barn och deras familjer.</p>
+            <div class="program-card-foot"><a href="https://tickets.nortic.se/ticket/organizer/1010" target="_blank" rel="noopener" class="btn btn-gold">Köp biljett</a></div>
+          </div>
+        </article>
+        <article class="program-card">
+          <img src="images/program/julteater.webp" alt="Julteater: Har du också julspel" class="program-card-img" loading="lazy">
+          <div class="program-card-body">
+            <span class="program-card-date">Lördag 12 dec · 15.00</span>
+            <h3 class="program-card-title">Julteater: Har du också julspel</h3>
+            <p class="program-card-desc">Kultur för alla Syd</p>
+            <div class="program-card-foot"><a href="https://tickets.nortic.se/ticket/organizer/1010" target="_blank" rel="noopener" class="btn btn-gold">Köp biljett</a></div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
   <footer class="site-footer">
     <div class="container">
 
@@ -104,6 +135,8 @@
     </div>
   </footer>
 
+
+  <script src="js/schedule.js"></script>
   <script src="js/site.js"></script>
 </body>
 </html>
