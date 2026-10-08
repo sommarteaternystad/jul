@@ -486,6 +486,15 @@ h2 {
   max-width: 520px;
 }
 
+.exhibitor-card p + p { margin-top: 10px; }
+
+.exhibitor-card p a {
+  color: var(--gold-light);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .exhibitor-card .btn { flex-shrink: 0; }
 
 /* ══════════════════════════════════════════════
